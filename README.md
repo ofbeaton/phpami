@@ -43,7 +43,7 @@ Hi, I'm Finlay Beaton ([@ofbeaton](https://github.com/ofbeaton)). This software 
 
 Everyone's time should be valuable, please consider donating.
 
-[Paypal Email Money Form](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=RDWQCGL5UD6DS&lc=CA&item_name=ofbeaton&item_number=phpami&currency_code=CAD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
+[Paypal Donation Form](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=RDWQCGL5UD6DS&lc=CA&item_name=ofbeaton&item_number=phpami&currency_code=CAD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
 
 ## License
 
