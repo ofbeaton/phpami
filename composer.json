@@ -1,7 +1,7 @@
 {
     "name": "ofbeaton/phpami",
     "description": "Asterisk Manager Interface (AMI) for PHP 5.4+ supporting legacy v1.4 to v13 with no thrills.",
-    "keywords": ["Asterisk", "astx", "AMI"],
+    "keywords": ["Asterisk", "astx", "AMI", "phpami", "phpagi", "pami", "pagi"],
     "homepage": "https://github.com/ofbeaton/phpami",
     "license": "LGPL 2.1",
     "authors": [
