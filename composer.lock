@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7d6fea959439e3c9816be8bbd59d8a01",
+    "hash": "b436e19d7cc3eaa5f82b15948551be9a",
     "packages": [],
     "packages-dev": [
         {
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ofbeaton/granite.git",
-                "reference": "2c40962df475305f6dad8b3c835ed47c61c75e07"
+                "reference": "e9b1492cae6fbb640fb43b2dd176f19052628d8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ofbeaton/granite/zipball/2c40962df475305f6dad8b3c835ed47c61c75e07",
-                "reference": "2c40962df475305f6dad8b3c835ed47c61c75e07",
+                "url": "https://api.github.com/repos/ofbeaton/granite/zipball/e9b1492cae6fbb640fb43b2dd176f19052628d8a",
+                "reference": "e9b1492cae6fbb640fb43b2dd176f19052628d8a",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "PHP_CodeSniffer",
                 "code sniffer"
             ],
-            "time": "2015-07-25 17:32:47"
+            "time": "2015-07-25 18:12:14"
         },
         {
             "name": "squizlabs/php_codesniffer",
