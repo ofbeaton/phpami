@@ -1,0 +1,594 @@
+
+FILE: E:\Coding\phpami\src\phpami.php
+----------------------------------------------------------------------
+FOUND 319 ERRORS AND 38 WARNINGS AFFECTING 258 LINES
+----------------------------------------------------------------------
+  26 | ERROR   | [ ] Class name doesn't match filename; expected
+     |         |     "class phpami"
+  43 | ERROR   | [ ] Missing @var tag in member variable comment
+  50 | ERROR   | [ ] The @var tag must be the first tag in a member
+     |         |     variable comment
+  58 | ERROR   | [ ] The @var tag must be the first tag in a member
+     |         |     variable comment
+  66 | ERROR   | [ ] The @var tag must be the first tag in a member
+     |         |     variable comment
+  74 | ERROR   | [ ] The @var tag must be the first tag in a member
+     |         |     variable comment
+  82 | ERROR   | [ ] The @var tag must be the first tag in a member
+     |         |     variable comment
+  84 | WARNING | [ ] Property name "$_logged_in" should not be
+     |         |     prefixed with an underscore to indicate
+     |         |     visibility
+  90 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+  90 | ERROR   | [ ] Parameter comment must end with a full stop
+  91 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+  91 | ERROR   | [ ] Parameter comment must end with a full stop
+  93 | ERROR   | [ ] Type hint "array" missing for $optconfig
+  96 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+  96 | ERROR   | [ ] Operator ! prohibited; use === FALSE instead
+  96 | ERROR   | [ ] The use of function is_null() is forbidden
+  97 | ERROR   | [x] Whitespace found at end of line
+  98 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 107 | ERROR   | [ ] Operator ! prohibited; use === FALSE instead
+ 111 | ERROR   | [ ] Operator ! prohibited; use === FALSE instead
+ 115 | ERROR   | [ ] Operator ! prohibited; use === FALSE instead
+ 119 | ERROR   | [ ] Operator ! prohibited; use === FALSE instead
+ 128 | ERROR   | [ ] Missing parameter comment
+ 129 | ERROR   | [ ] Missing parameter comment
+ 130 | ERROR   | [ ] Tag cannot be grouped with parameter tags in a
+     |         |     doc comment
+ 132 | ERROR   | [ ] Method name "Ami::send_request" is not in camel
+     |         |     caps format
+ 132 | ERROR   | [ ] Public method name "Ami::send_request" is not in
+     |         |     camel caps format
+ 132 | ERROR   | [ ] Type hint "array" missing for $parameters
+ 134 | ERROR   | [ ] Variable "$action" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 136 | ERROR   | [ ] Variable "$var" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 136 | ERROR   | [ ] Variable "$val" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 141 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 151 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 151 | ERROR   | [ ] Parameter comment must end with a full stop
+ 152 | ERROR   | [ ] Tag cannot be grouped with parameter tags in a
+     |         |     doc comment
+ 154 | ERROR   | [ ] Method name "Ami::wait_response" is not in camel
+     |         |     caps format
+ 154 | ERROR   | [ ] Public method name "Ami::wait_response" is not
+     |         |     in camel caps format
+ 164 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 165 | ERROR   | [ ] Operator ! prohibited; use === FALSE instead
+ 165 | ERROR   | [x] Expected 1 space after closing parenthesis;
+     |         |     found " // first line in a response?\n          
+     |         |              "
+ 168 | ERROR   | [ ] Operator == prohibited; use === instead
+ 168 | ERROR   | [x] Expected 1 space after closing parenthesis;
+     |         |     found 25
+ 192 | ERROR   | [x] Case breaking statement must be indented 4
+     |         |     spaces from SWITCH keyword
+ 196 | ERROR   | [x] Case breaking statement must be indented 4
+     |         |     spaces from SWITCH keyword
+ 198 | ERROR   | [ ] Empty CASE statements are not allowed
+ 199 | ERROR   | [x] Case breaking statement must be indented 4
+     |         |     spaces from SWITCH keyword
+ 203 | ERROR   | [x] Terminating statement must be indented to the
+     |         |     same level as the CASE body
+ 215 | ERROR   | [ ] Parameter tags must be defined first in a doc
+     |         |     commment
+ 215 | ERROR   | [ ] Missing parameter comment
+ 216 | ERROR   | [ ] Missing parameter comment
+ 217 | ERROR   | [ ] Missing parameter comment
+ 218 | ERROR   | [ ] Tag cannot be grouped with parameter tags in a
+     |         |     doc comment
+ 223 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 223 | ERROR   | [ ] The use of function is_null() is forbidden
+ 227 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 227 | ERROR   | [ ] The use of function is_null() is forbidden
+ 231 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 231 | ERROR   | [ ] The use of function is_null() is forbidden
+ 246 | ERROR   | [ ] Assignments must be the first block of code on a
+     |         |     line
+ 247 | WARNING | [ ] Silencing errors is discouraged
+ 248 | ERROR   | [ ] Operator == prohibited; use === instead
+ 249 | ERROR   | [ ] Variable "$this" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 249 | ERROR   | [ ] Variable "$this" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 249 | ERROR   | [ ] Variable "$errno" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 249 | ERROR   | [ ] Variable "$errstr" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 255 | ERROR   | [ ] Operator == prohibited; use === instead
+ 259 | ERROR   | [ ] Empty ELSE statement detected
+ 265 | ERROR   | [ ] Operator != prohibited; use !== instead
+ 281 | ERROR   | [ ] Missing @return tag in function comment
+ 284 | ERROR   | [ ] Operator == prohibited; use === instead
+ 301 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 301 | ERROR   | [ ] Parameter comment must end with a full stop
+ 302 | ERROR   | [ ] Parameter comment must end with a full stop
+ 303 | ERROR   | [ ] There must be no blank lines after the function
+     |         |     comment
+ 303 | ERROR   | [ ] Missing @return tag in function comment
+ 306 | ERROR   | [ ] Method name "Ami::AbsoluteTimeout" is not in
+     |         |     camel caps format
+ 306 | ERROR   | [ ] Public method name "Ami::AbsoluteTimeout" is not
+     |         |     in camel caps format
+ 308 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 316 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 316 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 317 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 318 | ERROR   | [ ] Missing @return tag in function comment
+ 319 | ERROR   | [ ] Method name "Ami::ChangeMonitor" is not in camel
+     |         |     caps format
+ 319 | ERROR   | [ ] Public method name "Ami::ChangeMonitor" is not
+     |         |     in camel caps format
+ 321 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 331 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 331 | ERROR   | [ ] Missing parameter comment
+ 332 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 332 | ERROR   | [ ] Parameter comment must end with a full stop
+ 333 | ERROR   | [ ] Missing @return tag in function comment
+ 334 | ERROR   | [ ] Method name "Ami::Command" is not in camel caps
+     |         |     format
+ 334 | ERROR   | [ ] Public method name "Ami::Command" is not in
+     |         |     camel caps format
+ 337 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 341 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 349 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 349 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 349 | ERROR   | [ ] Parameter comment must end with a full stop
+ 350 | ERROR   | [ ] Missing @return tag in function comment
+ 351 | ERROR   | [ ] Method name "Ami::Events" is not in camel caps
+     |         |     format
+ 351 | ERROR   | [ ] Public method name "Ami::Events" is not in camel
+     |         |     caps format
+ 353 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 361 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 361 | ERROR   | [ ] Parameter comment must end with a full stop
+ 362 | ERROR   | [ ] Parameter comment must end with a full stop
+ 363 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 363 | ERROR   | [ ] Parameter comment must end with a full stop
+ 364 | ERROR   | [ ] Missing @return tag in function comment
+ 365 | ERROR   | [ ] Method name "Ami::ExtensionState" is not in
+     |         |     camel caps format
+ 365 | ERROR   | [ ] Public method name "Ami::ExtensionState" is not
+     |         |     in camel caps format
+ 371 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 375 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 384 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 384 | ERROR   | [ ] Parameter comment must end with a full stop
+ 385 | ERROR   | [ ] Missing parameter comment
+ 386 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 386 | ERROR   | [ ] Parameter comment must end with a full stop
+ 387 | ERROR   | [ ] Missing @return tag in function comment
+ 388 | ERROR   | [ ] Method name "Ami::GetVar" is not in camel caps
+     |         |     format
+ 388 | ERROR   | [ ] Public method name "Ami::GetVar" is not in camel
+     |         |     caps format
+ 394 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 398 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 406 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 406 | ERROR   | [ ] Parameter comment must end with a full stop
+ 407 | ERROR   | [ ] Missing @return tag in function comment
+ 408 | ERROR   | [ ] Method name "Ami::Hangup" is not in camel caps
+     |         |     format
+ 408 | ERROR   | [ ] Public method name "Ami::Hangup" is not in camel
+     |         |     caps format
+ 410 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 418 | ERROR   | [ ] Missing @return tag in function comment
+ 419 | ERROR   | [ ] Public method name "Ami::IAXPeers" is not in
+     |         |     camel caps format
+ 421 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 429 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 429 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 429 | ERROR   | [ ] Parameter comment must end with a full stop
+ 430 | ERROR   | [ ] Missing @return tag in function comment
+ 431 | ERROR   | [ ] Method name "Ami::ListCommands" is not in camel
+     |         |     caps format
+ 431 | ERROR   | [ ] Public method name "Ami::ListCommands" is not in
+     |         |     camel caps format
+ 433 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 434 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 436 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 445 | ERROR   | [ ] Missing @return tag in function comment
+ 446 | ERROR   | [ ] Method name "Ami::Logoff" is not in camel caps
+     |         |     format
+ 446 | ERROR   | [ ] Public method name "Ami::Logoff" is not in camel
+     |         |     caps format
+ 448 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 462 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 462 | ERROR   | [ ] Parameter comment must end with a full stop
+ 463 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 463 | ERROR   | [ ] Parameter comment must end with a full stop
+ 464 | ERROR   | [ ] Missing @return tag in function comment
+ 465 | ERROR   | [ ] Method name "Ami::MailboxCount" is not in camel
+     |         |     caps format
+ 465 | ERROR   | [ ] Public method name "Ami::MailboxCount" is not in
+     |         |     camel caps format
+ 468 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 472 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 485 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 485 | ERROR   | [ ] Parameter comment must end with a full stop
+ 486 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 486 | ERROR   | [ ] Parameter comment must end with a full stop
+ 487 | ERROR   | [ ] Missing @return tag in function comment
+ 488 | ERROR   | [ ] Method name "Ami::MailboxStatus" is not in camel
+     |         |     caps format
+ 488 | ERROR   | [ ] Public method name "Ami::MailboxStatus" is not
+     |         |     in camel caps format
+ 491 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 495 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 503 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 503 | ERROR   | [ ] Missing parameter comment
+ 504 | ERROR   | [ ] Missing parameter comment
+ 505 | ERROR   | [ ] Missing parameter comment
+ 506 | ERROR   | [ ] Missing parameter comment
+ 507 | ERROR   | [ ] Missing @return tag in function comment
+ 508 | ERROR   | [ ] Method name "Ami::Monitor" is not in camel caps
+     |         |     format
+ 508 | ERROR   | [ ] Public method name "Ami::Monitor" is not in
+     |         |     camel caps format
+ 511 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 515 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 519 | ERROR   | [ ] Operator ! prohibited; use === FALSE instead
+ 519 | ERROR   | [ ] The use of function is_null() is forbidden
+ 520 | ERROR   | [ ] The value of a comparison must not be assigned
+     |         |     to a variable
+ 523 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 531 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 531 | ERROR   | [ ] Parameter comment must end with a full stop
+ 532 | ERROR   | [ ] Parameter comment must end with a full stop
+ 533 | ERROR   | [ ] Parameter comment must end with a full stop
+ 534 | ERROR   | [ ] Parameter comment must end with a full stop
+ 535 | ERROR   | [ ] Parameter comment must end with a full stop
+ 536 | ERROR   | [ ] Parameter comment must end with a full stop
+ 537 | ERROR   | [ ] Parameter comment must end with a full stop
+ 538 | ERROR   | [ ] Parameter comment must end with a full stop
+ 539 | ERROR   | [ ] Parameter comment must end with a full stop
+ 540 | ERROR   | [ ] Parameter comment must end with a full stop
+ 541 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 541 | ERROR   | [ ] Parameter comment must end with a full stop
+ 542 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 542 | ERROR   | [ ] Parameter comment must end with a full stop
+ 543 | ERROR   | [ ] Missing @return tag in function comment
+ 544 | ERROR   | [ ] Method name "Ami::Originate" is not in camel
+     |         |     caps format
+ 544 | ERROR   | [ ] Public method name "Ami::Originate" is not in
+     |         |     camel caps format
+ 560 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 564 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 568 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 572 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 576 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 580 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 584 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 588 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 592 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 596 | ERROR   | [ ] Operator ! prohibited; use === FALSE instead
+ 596 | ERROR   | [ ] The use of function is_null() is forbidden
+ 597 | ERROR   | [ ] The value of a comparison must not be assigned
+     |         |     to a variable
+ 600 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 604 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 612 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 612 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 612 | ERROR   | [ ] Parameter comment must end with a full stop
+ 613 | ERROR   | [ ] Missing @return tag in function comment
+ 614 | ERROR   | [ ] Method name "Ami::ParkedCalls" is not in camel
+     |         |     caps format
+ 614 | ERROR   | [ ] Public method name "Ami::ParkedCalls" is not in
+     |         |     camel caps format
+ 616 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 617 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 619 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 628 | ERROR   | [ ] Missing @return tag in function comment
+ 629 | ERROR   | [ ] Method name "Ami::Ping" is not in camel caps
+     |         |     format
+ 629 | ERROR   | [ ] Public method name "Ami::Ping" is not in camel
+     |         |     caps format
+ 631 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 639 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 639 | ERROR   | [ ] Missing parameter comment
+ 640 | ERROR   | [ ] Missing parameter comment
+ 641 | ERROR   | [ ] Missing parameter comment
+ 642 | ERROR   | [ ] Missing @return tag in function comment
+ 643 | ERROR   | [ ] Method name "Ami::QueueAdd" is not in camel caps
+     |         |     format
+ 643 | ERROR   | [ ] Public method name "Ami::QueueAdd" is not in
+     |         |     camel caps format
+ 649 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 653 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 661 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 661 | ERROR   | [ ] Missing parameter comment
+ 662 | ERROR   | [ ] Missing parameter comment
+ 663 | ERROR   | [ ] Missing @return tag in function comment
+ 664 | ERROR   | [ ] Method name "Ami::QueueRemove" is not in camel
+     |         |     caps format
+ 664 | ERROR   | [ ] Public method name "Ami::QueueRemove" is not in
+     |         |     camel caps format
+ 666 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 674 | ERROR   | [ ] Missing @return tag in function comment
+ 675 | ERROR   | [ ] Method name "Ami::Queues" is not in camel caps
+     |         |     format
+ 675 | ERROR   | [ ] Public method name "Ami::Queues" is not in camel
+     |         |     caps format
+ 677 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 685 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 685 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 685 | ERROR   | [ ] Parameter comment must end with a full stop
+ 686 | ERROR   | [ ] Missing @return tag in function comment
+ 687 | ERROR   | [ ] Method name "Ami::QueueStatus" is not in camel
+     |         |     caps format
+ 687 | ERROR   | [ ] Public method name "Ami::QueueStatus" is not in
+     |         |     camel caps format
+ 689 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 690 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 692 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 701 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 701 | ERROR   | [ ] Missing parameter comment
+ 702 | ERROR   | [ ] Missing parameter comment
+ 703 | ERROR   | [ ] Missing parameter comment
+ 704 | ERROR   | [ ] Missing parameter comment
+ 705 | ERROR   | [ ] Missing parameter comment
+ 706 | ERROR   | [ ] Missing @return tag in function comment
+ 707 | ERROR   | [ ] Method name "Ami::Redirect" is not in camel caps
+     |         |     format
+ 707 | ERROR   | [ ] Public method name "Ami::Redirect" is not in
+     |         |     camel caps format
+ 709 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 723 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 723 | ERROR   | [ ] Missing parameter comment
+ 724 | ERROR   | [ ] Missing parameter comment
+ 725 | ERROR   | [ ] Missing parameter comment
+ 726 | ERROR   | [ ] Missing @return tag in function comment
+ 727 | ERROR   | [ ] Method name "Ami::SetCDRUserField" is not in
+     |         |     camel caps format
+ 727 | ERROR   | [ ] Public method name "Ami::SetCDRUserField" is not
+     |         |     in camel caps format
+ 733 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 737 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 745 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 745 | ERROR   | [ ] Parameter comment must end with a full stop
+ 746 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 746 | ERROR   | [ ] Parameter comment must end with a full stop
+ 747 | ERROR   | [ ] Missing parameter comment
+ 748 | ERROR   | [ ] Missing @return tag in function comment
+ 749 | ERROR   | [ ] Method name "Ami::SetVar" is not in camel caps
+     |         |     format
+ 749 | ERROR   | [ ] Public method name "Ami::SetVar" is not in camel
+     |         |     caps format
+ 751 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 759 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 759 | ERROR   | [ ] Missing parameter comment
+ 760 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 760 | ERROR   | [ ] Parameter comment must end with a full stop
+ 761 | ERROR   | [ ] Missing @return tag in function comment
+ 762 | ERROR   | [ ] Method name "Ami::Status" is not in camel caps
+     |         |     format
+ 762 | ERROR   | [ ] Public method name "Ami::Status" is not in camel
+     |         |     caps format
+ 765 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 769 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 777 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 777 | ERROR   | [ ] Missing parameter comment
+ 778 | ERROR   | [ ] Missing @return tag in function comment
+ 779 | ERROR   | [ ] Method name "Ami::StopMonitor" is not in camel
+     |         |     caps format
+ 779 | ERROR   | [ ] Public method name "Ami::StopMonitor" is not in
+     |         |     camel caps format
+ 781 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 789 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 789 | ERROR   | [ ] Missing parameter comment
+ 790 | ERROR   | [ ] Missing parameter comment
+ 791 | ERROR   | [ ] Missing @return tag in function comment
+ 792 | ERROR   | [ ] Method name "Ami::ZapDialOffhook" is not in
+     |         |     camel caps format
+ 792 | ERROR   | [ ] Public method name "Ami::ZapDialOffhook" is not
+     |         |     in camel caps format
+ 794 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 802 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 802 | ERROR   | [ ] Missing parameter comment
+ 803 | ERROR   | [ ] Missing @return tag in function comment
+ 804 | ERROR   | [ ] Method name "Ami::ZapDNDoff" is not in camel
+     |         |     caps format
+ 804 | ERROR   | [ ] Public method name "Ami::ZapDNDoff" is not in
+     |         |     camel caps format
+ 806 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 814 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 814 | ERROR   | [ ] Missing parameter comment
+ 815 | ERROR   | [ ] Missing @return tag in function comment
+ 816 | ERROR   | [ ] Method name "Ami::ZapDNDon" is not in camel caps
+     |         |     format
+ 816 | ERROR   | [ ] Public method name "Ami::ZapDNDon" is not in
+     |         |     camel caps format
+ 818 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 826 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 826 | ERROR   | [ ] Missing parameter comment
+ 827 | ERROR   | [ ] Missing @return tag in function comment
+ 828 | ERROR   | [ ] Method name "Ami::ZapHangup" is not in camel
+     |         |     caps format
+ 828 | ERROR   | [ ] Public method name "Ami::ZapHangup" is not in
+     |         |     camel caps format
+ 830 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 838 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 838 | ERROR   | [ ] Missing parameter comment
+ 839 | ERROR   | [ ] Missing @return tag in function comment
+ 840 | ERROR   | [ ] Method name "Ami::ZapTransfer" is not in camel
+     |         |     caps format
+ 840 | ERROR   | [ ] Public method name "Ami::ZapTransfer" is not in
+     |         |     camel caps format
+ 842 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 850 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 850 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 850 | ERROR   | [ ] Parameter comment must end with a full stop
+ 851 | ERROR   | [ ] Missing @return tag in function comment
+ 852 | ERROR   | [ ] Method name "Ami::ZapShowChannels" is not in
+     |         |     camel caps format
+ 852 | ERROR   | [ ] Public method name "Ami::ZapShowChannels" is not
+     |         |     in camel caps format
+ 854 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 855 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 857 | WARNING | [ ] The result of a function call should be assigned
+     |         |     to a variable before being returned
+ 865 | ERROR   | [ ] Empty line required before block comment
+ 873 | ERROR   | [ ] You must use "/**" style comments for a function
+     |         |     comment
+ 875 | ERROR   | [ ] Operator != prohibited; use !== instead
+ 919 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 919 | ERROR   | [ ] Parameter comment must end with a full stop
+ 920 | ERROR   | [ ] Parameter comment must start with a capital
+     |         |     letter
+ 920 | ERROR   | [ ] Parameter comment must end with a full stop
+ 921 | ERROR   | [ ] Tag cannot be grouped with parameter tags in a
+     |         |     doc comment
+ 923 | ERROR   | [ ] Method name "Ami::add_event_handler" is not in
+     |         |     camel caps format
+ 923 | ERROR   | [ ] Public method name "Ami::add_event_handler" is
+     |         |     not in camel caps format
+ 926 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 927 | ERROR   | [ ] Variable "$event" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 940 | ERROR   | [ ] Parameter tags must be grouped together in a doc
+     |         |     commment
+ 940 | ERROR   | [ ] Missing parameter comment
+ 941 | ERROR   | [ ] Tag cannot be grouped with parameter tags in a
+     |         |     doc comment
+ 943 | ERROR   | [ ] Method name "Ami::process_event" is not in camel
+     |         |     caps format
+ 943 | ERROR   | [ ] Public method name "Ami::process_event" is not
+     |         |     in camel caps format
+ 943 | ERROR   | [ ] Type hint "array" missing for $parameters
+ 947 | ERROR   | [ ] Variable "$e" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 950 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 952 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 952 | ERROR   | [ ] Assignments must be the first block of code on a
+     |         |     line
+ 954 | ERROR   | [ ] Implicit true comparisons prohibited; use ===
+     |         |     TRUE instead
+ 955 | ERROR   | [ ] Variable "$handler" not allowed in double quoted
+     |         |     string; use concatenation instead
+ 958 | ERROR   | [ ] Variable "$e" not allowed in double quoted
+     |         |     string; use concatenation instead
+----------------------------------------------------------------------
+PHPCBF CAN FIX THE 7 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+Time: 919ms; Memory: 10.5Mb
+
