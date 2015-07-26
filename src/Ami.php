@@ -162,7 +162,7 @@ class Ami
             while ($buffer != '') {
                 $a = strpos($buffer, ':');
                 if ($a !== false) {
-                    if (count($parameters) === false) { // first line in a response?
+                    if (count($parameters) === 0) { // first line in a response?
                         $type = strtolower(substr($buffer, 0, $a));
                         if (substr($buffer, ($a + 2)) === 'Follows') {
                         // A follows response means there is a miltiline field that follows.
@@ -201,7 +201,7 @@ class Ami
                     $this->log('Unhandled response packet from Manager: ' . print_r($parameters, true));
                     break;
             }
-        } while ($type != 'response' && !$timeout);
+        } while ($type !== 'response' && $timeout === false);
         return $parameters;
     }//end waitResponse()
 
