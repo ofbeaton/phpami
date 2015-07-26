@@ -35,6 +35,36 @@ class Ami
      */
     const DEFAULT_PHPAGI_CONFIG = '/etc/asterisk/phpagi.conf';
 
+    /**
+     * Log level.
+     */
+    const LOG_FATAL = 0;
+
+    /**
+     * Log level.
+     */
+    const LOG_ERROR = 1;
+
+    /**
+     * Log level.
+     */
+    const LOG_WARN = 2;
+
+    /**
+     * Log level.
+     */
+    const LOG_INFO = 3;
+
+    /**
+     * Log level.
+     */
+    const LOG_DEBUG = 4;
+
+    /**
+     * Log level.
+     */
+    const LOG_TRACE = 5;
+
    /**
     * Config variables
     *
@@ -76,6 +106,11 @@ class Ami
     * @var boolean
     */
     private $loggedIn = false;
+
+    /**
+     * @var int Log level.
+     */
+    private $logLevel = self::LOG_ERROR;
 
 
    /**
@@ -198,7 +233,7 @@ class Ami
                     break;
 
                 default:
-                    $this->log('Unhandled response packet from Manager: ' . print_r($parameters, true));
+                    $this->log('Unhandled response packet from Manager: '.print_r($parameters, true), self::LOG_ERROR);
                     break;
             }
         } while ($type !== 'response' && $timeout === false);
@@ -248,7 +283,10 @@ class Ami
         // TODO: Convert this to a custom error handler to silence the error instead.
         $this->socket = @fsockopen($this->server, $this->port, $errno, $errstr);
         if ($this->socket === false) {
-            $this->log('Unable to connect to manager '.$this->server.':'.$this->port.' ('.$errno.'): '.$errstr);
+            $this->log(
+                'Unable to connect to manager '.$this->server.':'.$this->port.' ('.$errno.'): '.$errstr,
+                self::LOG_FATAL
+            );
             return false;
         }
 
@@ -257,7 +295,7 @@ class Ami
         // note: else: don't $this->log($str) until someone looks to see why it mangles the logging
         if ($str === false) {
             // a problem.
-            $this->log('Asterisk Manager header not received.');
+            $this->log('Asterisk Manager header not received.', self::LOG_FATAL);
             return false;
         }
 
@@ -265,7 +303,7 @@ class Ami
         $res = $this->sendRequest('login', ['Username' => $username, 'Secret' => $secret]);
         if ($res['Response'] !== 'Success') {
             $this->loggedIn = false;
-            $this->log('Failed to login.');
+            $this->log('Failed to login.', self::LOG_FATAL);
             $this->disconnect();
             return false;
         }
@@ -1001,10 +1039,27 @@ class Ami
     *
     * @return void
     */
-    public function log($message, $level = 1)
+    public function log($message, $level = self::LOG_INFO)
     {
-        error_log(date('r') . ' - ' . $message);
+        if ($level <= $this->logLevel) {
+            error_log(date('r') . ' - ' . $message);
+        }
     }//end log()
+
+    /**
+     * @param integer $level Log Level to use.
+     *
+     * @return void
+     * @throws \InvalidArgumentException Invalid Log level.
+     */
+    public function setLogLevel($level)
+    {
+        if ($level < self::LOG_FATAL || $level > self::LOG_TRACE) {
+            throw new \InvalidArgumentException('Invalid Log Level');
+        }
+
+        $this->logLevel = $level;
+    }//end setLogLevel()
 
 
    /**
@@ -1052,7 +1107,7 @@ class Ami
     {
         $event = strtolower($event);
         if (isset($this->eventHandlers[$event]) === true) {
-            $this->log($event.' handler is already defined, not over-writing.');
+            $this->log($event.' handler is already defined, not over-writing.', self::LOG_ERROR);
             return false;
         }
 
@@ -1072,7 +1127,7 @@ class Ami
     {
         $ret = false;
         $e = strtolower($parameters['Event']);
-        $this->log('Got event: '.$e);
+        $this->log('Got event: '.$e, self::LOG_INFO);
 
         $handler = '';
         if (isset($this->eventHandlers[$e]) === true) {
@@ -1082,10 +1137,10 @@ class Ami
         }
 
         if (function_exists($handler) === true) {
-            $this->log('Execute handler: '.$handler);
+            $this->log('Execute handler: '.$handler, self::LOG_DEBUG);
             $ret = $handler($e, $parameters, $this->server, $this->port);
         } else {
-            $this->log('No event handler for event: '.$e);
+            $this->log('No event handler for event: '.$e, self::LOG_DEBUG);
         }
 
         return $ret;
