@@ -157,12 +157,13 @@ class Ami
    /**
     * Send a request
     *
-    * @param string $action     To send.
-    * @param array  $parameters To attach.
+    * @param string  $action     To send.
+    * @param array   $parameters To attach.
+    * @param boolean $returnData Should just return split data.
     *
     * @return array of parameters
     */
-    public function sendRequest($action, array $parameters = [])
+    public function sendRequest($action, array $parameters = [], $returnData = false)
     {
         $req = 'Action: '.$action."\r\n";
         foreach ($parameters as $var => $val) {
@@ -172,6 +173,12 @@ class Ami
         $req .= "\r\n";
         fwrite($this->socket, $req);
         $response = $this->waitResponse();
+
+        // return just the split data
+        if ($returnData === true) {
+            $response = $this->split($response['data']);
+        }
+
         return $response;
     }//end sendRequest()
 
@@ -369,8 +376,9 @@ class Ami
    /**
     * Execute Command
     *
-    * @param string $command  The command to execute.
-    * @param string $actionId Message matching variable.
+    * @param string  $command    The command to execute.
+    * @param string  $actionId   Message matching variable.
+    * @param boolean $returnData Should just return split data.
     *
     * @return array of parameters
     *
@@ -378,14 +386,14 @@ class Ami
     * @link    http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Command
     * @link    http://www.voip-info.org/wiki-Asterisk+CLI
     */
-    public function command($command, $actionId = null)
+    public function command($command, $actionId = null, $returnData = false)
     {
         $parameters = ['Command' => $command];
         if ($actionId !== null) {
             $parameters['ActionID'] = $actionId;
         }
 
-        $result = $this->sendRequest('Command', $parameters);
+        $result = $this->sendRequest('Command', $parameters, $returnData);
         return $result;
     }//end command()
 
@@ -435,16 +443,17 @@ class Ami
    /**
     * Gets a Channel Variable
     *
-    * @param string $channel  Channel to read variable from.
-    * @param string $variable To retrieve.
-    * @param string $actionId Message matching variable.
+    * @param string  $channel    Channel to read variable from.
+    * @param string  $variable   To retrieve.
+    * @param string  $actionId   Message matching variable.
+    * @param boolean $returnData Should just return split data.
     *
     * @return array of parameters
     *
     * @link http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+GetVar
     * @link http://www.voip-info.org/wiki-Asterisk+variables
     */
-    public function getVar($channel, $variable, $actionId = null)
+    public function getVar($channel, $variable, $actionId = null, $returnData = false)
     {
         $parameters = [
             'Channel' => $channel,
@@ -454,7 +463,7 @@ class Ami
             $parameters['ActionID'] = $actionId;
         }
 
-        $result = $this->sendRequest('GetVar', $parameters);
+        $result = $this->sendRequest('GetVar', $parameters, $returnData);
         return $result;
     }//end getVar()
 
@@ -1046,11 +1055,14 @@ class Ami
         }
     }//end log()
 
+
     /**
      * @param integer $level Log Level to use.
      *
      * @return void
      * @throws \InvalidArgumentException Invalid Log level.
+     *
+     * @since 2015-07-25
      */
     public function setLogLevel($level)
     {
@@ -1145,4 +1157,17 @@ class Ami
 
         return $ret;
     }//end processEvent()
+
+
+    /**
+     * @param string $input To split.
+     *
+     * @return array of output lines
+     * @since 2015-07-26
+     */
+    public function split($input)
+    {
+        $output = preg_split('/[\t\n]+/', $input);
+        return $output;
+    }//end split()
 }//end class
