@@ -157,13 +157,12 @@ class Ami
    /**
     * Send a request
     *
-    * @param string  $action     To send.
-    * @param array   $parameters To attach.
-    * @param boolean $returnData Should just return split data.
+    * @param string $action     To send.
+    * @param array  $parameters To attach.
     *
     * @return array of parameters
     */
-    public function sendRequest($action, array $parameters = [], $returnData = false)
+    public function sendRequest($action, array $parameters = [])
     {
         $req = 'Action: '.$action."\r\n";
         foreach ($parameters as $var => $val) {
@@ -173,11 +172,6 @@ class Ami
         $req .= "\r\n";
         fwrite($this->socket, $req);
         $response = $this->waitResponse();
-
-        // return just the split data
-        if ($returnData === true) {
-            $response = $this->split($response['data']);
-        }
 
         return $response;
     }//end sendRequest()
@@ -376,9 +370,8 @@ class Ami
    /**
     * Execute Command
     *
-    * @param string  $command    The command to execute.
-    * @param string  $actionId   Message matching variable.
-    * @param boolean $returnData Should just return split data.
+    * @param string $command  The command to execute.
+    * @param string $actionId Message matching variable.
     *
     * @return array of parameters
     *
@@ -386,14 +379,14 @@ class Ami
     * @link    http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Command
     * @link    http://www.voip-info.org/wiki-Asterisk+CLI
     */
-    public function command($command, $actionId = null, $returnData = false)
+    public function command($command, $actionId = null)
     {
         $parameters = ['Command' => $command];
         if ($actionId !== null) {
             $parameters['ActionID'] = $actionId;
         }
 
-        $result = $this->sendRequest('Command', $parameters, $returnData);
+        $result = $this->sendRequest('Command', $parameters);
         return $result;
     }//end command()
 
@@ -443,17 +436,16 @@ class Ami
    /**
     * Gets a Channel Variable
     *
-    * @param string  $channel    Channel to read variable from.
-    * @param string  $variable   To retrieve.
-    * @param string  $actionId   Message matching variable.
-    * @param boolean $returnData Should just return split data.
+    * @param string $channel  Channel to read variable from.
+    * @param string $variable To retrieve.
+    * @param string $actionId Message matching variable.
     *
     * @return array of parameters
     *
     * @link http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+GetVar
     * @link http://www.voip-info.org/wiki-Asterisk+variables
     */
-    public function getVar($channel, $variable, $actionId = null, $returnData = false)
+    public function getVar($channel, $variable, $actionId = null)
     {
         $parameters = [
             'Channel' => $channel,
@@ -463,7 +455,7 @@ class Ami
             $parameters['ActionID'] = $actionId;
         }
 
-        $result = $this->sendRequest('GetVar', $parameters, $returnData);
+        $result = $this->sendRequest('GetVar', $parameters);
         return $result;
     }//end getVar()
 
