@@ -28,7 +28,7 @@ After installing, you can now use it in your code:
 ```php
    $ami = new \PHPAMI\Ami();
    if ($ami->connect('localhost:5038', 'myuser', 'mysecret', 'off') === false) {
-      throw \RuntimeException('Could not connect to Asterisk Management Interface.');
+      throw new \RuntimeException('Could not connect to Asterisk Management Interface.');
    }
    
    // $result contains the output from the command
