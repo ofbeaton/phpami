@@ -245,15 +245,16 @@ class Ami
    /**
     * Connect to Asterisk
     *
-    * @param string|null $server   Hostname to connect to. Recommend FQDN.
-    * @param string|null $username Username to authenticate with.
-    * @param string|null $secret   Password for the user.
+    * @param string|null    $server   Hostname to connect to. Recommend FQDN.
+    * @param string|null    $username Username to authenticate with.
+    * @param string|null    $secret   Password for the user.
+    * @param boolean|string $events   Toggle or filter events.
     *
     * @return boolean true on success
     *
     * @example examples/sip_show_peer.php Get information about a sip peer
     */
-    public function connect($server = null, $username = null, $secret = null)
+    public function connect($server = null, $username = null, $secret = null, $events = true)
     {
     // use config if not specified
         if ($server === null) {
@@ -310,6 +311,12 @@ class Ami
         }
 
         $this->loggedIn = true;
+
+        // default state is to get all events, only send if changed
+        if ($events !== true && $events !== 'on') {
+            $this->events($events);
+        }
+
         return true;
     }//end connect()
 
@@ -394,7 +401,7 @@ class Ami
    /**
     * Enable/Disable sending of events to this manager
     *
-    * @param string $eventmask Is either 'on', 'off', or 'system,call,log'.
+    * @param string|boolean $eventmask Is either 'on', 'off', or 'system,call,log'.
     *
     * @return array of parameters
     *
@@ -402,6 +409,12 @@ class Ami
     */
     public function events($eventmask)
     {
+        if ($eventmask === true) {
+            $eventmask = 'on';
+        } elseif ($eventmask === false) {
+            $eventmask = 'off';
+        }
+
         $result = $this->sendRequest('Events', ['EventMask' => $eventmask]);
         return $result;
     }//end events()
