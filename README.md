@@ -3,13 +3,13 @@ Asterisk Manager Interface (AMI) for PHP 5.4+ supporting legacy v1.4 to v13 with
 
 This is a fork and update of the AMI portion of the now defunc [PHPAGI](http://phpagi.sourceforge.net/) PHP 4.4 project which has not been updated since 2010.
 
-We have kept the simplicity of a simple class with command methods, adding a packagist entry and namespaces. This is a breaking change as class and method names have changed to follow modern standards, however they are a 1:1 mapping so updating your code should be straight forward.
+We have kept the simplicity of a single class with command methods, adding a packagist entry and namespaces. This is a breaking change as class and method names have changed to follow modern standards, however they are a 1:1 mapping so updating your code should be straight forward.
 
 If you are dealing with only Asterisk v13+ servers, consider using [PAMI](http://marcelog.github.io/PAMI/) instead, which uses modern design paterns with observer-listener pattern. It no longer supports legacy Asterisk versions like v1.4 however. It may also see less development than the [NAMI](http://marcelog.github.io/Nami/) library for NodeJS.    
 
 ## Installing via Composer
 
-The recommended way to install Granite is through
+The recommended way to install PHPAMI is through
 [Composer](http://getcomposer.org).
 
 ```bash
