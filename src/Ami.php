@@ -172,7 +172,7 @@ class Ami
         $req .= "\r\n";
         fwrite($this->socket, $req);
         $response = $this->waitResponse();
-
+         
         return $response;
     }//end sendRequest()
 
@@ -188,7 +188,13 @@ class Ami
     * @return array of parameters, empty on timeout
     */
     public function waitResponse($allowTimeout = false)
-    {
+    {           
+        // make sure we haven't already timed out
+        $info = stream_get_meta_data($this->socket);
+        if (feof($this->socket) === true || $info['timed_out'] === true) {
+          return [];
+        }  
+    
         $timeout = false;
         do {
             $type = null;
@@ -204,9 +210,11 @@ class Ami
                         // A follows response means there is a miltiline field that follows.
                             $parameters['data'] = '';
                             $buff = fgets($this->socket, 4096);
-                            while (substr($buff, 0, 6) != '--END ') {
+                            $info = stream_get_meta_data($this->socket);
+                            while (substr($buff, 0, 6) != '--END ' && $info['timed_out'] !== true && $info['eof'] !== true) {
                                 $parameters['data'] .= $buff;
                                 $buff = fgets($this->socket, 4096);
+                                $info = stream_get_meta_data($this->socket);
                             }
                         }
                     }
@@ -241,6 +249,23 @@ class Ami
         return $parameters;
     }//end waitResponse()
 
+
+    /**
+     * Empty receive buffer
+     * 
+     * @return flushed buffer
+     */
+   public function flush()
+   {
+      $buffer = fgets($this->socket, 4096);
+      $info = stream_get_meta_data($this->socket);
+      while ($info['timed_out'] !== true && $info['eof'] !== true) {
+         $buffer .= fgets($this->socket, 4096);
+         $info = stream_get_meta_data($this->socket);
+      }
+      
+      return $buffer;
+   }                   
 
    /**
     * Connect to Asterisk
@@ -291,11 +316,15 @@ class Ami
             );
             return false;
         }
+        
+        // set a 2 second stream timeout
+        stream_set_timeout($this->socket, 2);
 
         // read the header
         $str = fgets($this->socket);
+        $info = stream_get_meta_data($this->socket);
         // note: else: don't $this->log($str) until someone looks to see why it mangles the logging
-        if ($str === false) {
+        if ($str === false || $info['timed_out'] === true) {
             // a problem.
             $this->log('Asterisk Manager header not received.', self::LOG_FATAL);
             return false;
