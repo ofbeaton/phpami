@@ -19,13 +19,13 @@
         }
     ],
     "require": {
-        "php": "^5.4"
+        "php": ">=5.4.0"
     },
     "require-dev": {
         "ofbeaton/granite": "^1.0@dev"
     },
     "config": {
-      "bin-dir": "bin"
+      "bin-dir": "vbin"
     },
     "autoload": {
         "psr-4": {
@@ -41,7 +41,5 @@
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
