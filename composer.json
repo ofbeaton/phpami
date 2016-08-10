@@ -22,7 +22,7 @@
         "php": ">=5.4.0"
     },
     "require-dev": {
-        "ofbeaton/granite": "^1.0@dev"
+        "ofbeaton/granite": "^1.0"
     },
     "config": {
       "bin-dir": "vbin"

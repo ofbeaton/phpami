@@ -4,13 +4,13 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8e3b7552b1ecb7ea8e4eb01d2045acf3",
-    "content-hash": "fad41911ba84d2efd5a2440b4aa4291e",
+    "hash": "2ffcacab7879382cb78548af2a972081",
+    "content-hash": "059a92d3fb3b4a56a5f29c848c48a1f4",
     "packages": [],
     "packages-dev": [
         {
             "name": "ofbeaton/granite",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ofbeaton/granite.git",
@@ -136,9 +136,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "ofbeaton/granite": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
