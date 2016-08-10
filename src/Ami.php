@@ -172,7 +172,7 @@ class Ami
         $req .= "\r\n";
         fwrite($this->socket, $req);
         $response = $this->waitResponse();
-         
+
         return $response;
     }//end sendRequest()
 
@@ -188,20 +188,20 @@ class Ami
     * @return array of parameters, empty on timeout
     */
     public function waitResponse($allowTimeout = false)
-    {           
+    {
         // make sure we haven't already timed out
         $info = stream_get_meta_data($this->socket);
         if (feof($this->socket) === true || $info['timed_out'] === true) {
-          return [];
-        }  
-    
+            return [];
+        }
+
         $timeout = false;
         do {
             $type = null;
             $parameters = [];
 
             $buffer = trim(fgets($this->socket, 4096));
-            while ($buffer != '') {
+            while ($buffer !== false && $buffer !== '') {
                 $a = strpos($buffer, ':');
                 if ($a !== false) {
                     if (count($parameters) === 0) { // first line in a response?
@@ -211,7 +211,10 @@ class Ami
                             $parameters['data'] = '';
                             $buff = fgets($this->socket, 4096);
                             $info = stream_get_meta_data($this->socket);
-                            while (substr($buff, 0, 6) != '--END ' && $info['timed_out'] !== true && $info['eof'] !== true) {
+                            while (substr($buff, 0, 6) !== '--END '
+                              && $info['timed_out'] !== true
+                              && $info['eof'] !== true
+                            ) {
                                 $parameters['data'] .= $buff;
                                 $buff = fgets($this->socket, 4096);
                                 $info = stream_get_meta_data($this->socket);
@@ -221,7 +224,7 @@ class Ami
 
                   // store parameter in $parameters
                     $parameters[substr($buffer, 0, $a)] = substr($buffer, ($a + 2));
-                }
+                }//end if
 
                 $buffer = trim(fgets($this->socket, 4096));
             }//end while
@@ -252,20 +255,21 @@ class Ami
 
     /**
      * Empty receive buffer
-     * 
+     *
      * @return flushed buffer
      */
-   public function flush()
-   {
-      $buffer = fgets($this->socket, 4096);
-      $info = stream_get_meta_data($this->socket);
-      while ($info['timed_out'] !== true && $info['eof'] !== true) {
-         $buffer .= fgets($this->socket, 4096);
-         $info = stream_get_meta_data($this->socket);
-      }
-      
-      return $buffer;
-   }                   
+    public function flush()
+    {
+        $buffer = fgets($this->socket, 4096);
+        $info = stream_get_meta_data($this->socket);
+        while ($info['timed_out'] !== true && $info['eof'] !== true) {
+            $buffer .= fgets($this->socket, 4096);
+            $info = stream_get_meta_data($this->socket);
+        }
+
+        return $buffer;
+    }//end flush()
+
 
    /**
     * Connect to Asterisk
@@ -316,7 +320,7 @@ class Ami
             );
             return false;
         }
-        
+
         // set a 2 second stream timeout
         stream_set_timeout($this->socket, 2);
 
@@ -463,9 +467,9 @@ class Ami
     public function extensionState($exten, $context, $actionId = null)
     {
         $parameters = [
-            'Exten' => $exten,
-            'Context' => $context
-        ];
+                       'Exten'   => $exten,
+                       'Context' => $context,
+                      ];
         if ($actionId !== null) {
             $parameters['ActionID'] = $actionId;
         }
@@ -490,9 +494,9 @@ class Ami
     public function getVar($channel, $variable, $actionId = null)
     {
         $parameters = [
-            'Channel' => $channel,
-            'Variable' => $variable
-        ];
+                       'Channel'  => $channel,
+                       'Variable' => $variable,
+                      ];
         if ($actionId !== null) {
             $parameters['ActionID'] = $actionId;
         }
@@ -796,9 +800,9 @@ class Ami
     public function queueAdd($queue, $interface, $penalty = 0)
     {
         $parameters = [
-            'Queue' => $queue,
-            'Interface' => $interface
-        ];
+                       'Queue'     => $queue,
+                       'Interface' => $interface,
+                      ];
         if ($penalty !== 0) {
             $parameters['Penalty'] = $penalty;
         }
@@ -878,11 +882,11 @@ class Ami
         $result = $this->sendRequest(
             'Redirect',
             [
-                'Channel' => $channel,
-                'ExtraChannel' => $extrachannel,
-                'Exten' => $exten,
-                'Context'  => $context,
-                'Priority' => $priority
+             'Channel'      => $channel,
+             'ExtraChannel' => $extrachannel,
+             'Exten'        => $exten,
+             'Context'      => $context,
+             'Priority'     => $priority,
             ]
         );
 
@@ -904,9 +908,9 @@ class Ami
     public function setCdrUserField($userfield, $channel, $append = null)
     {
         $parameters = [
-            'UserField' => $userfield,
-            'Channel' => $channel
-        ];
+                       'UserField' => $userfield,
+                       'Channel'   => $channel,
+                      ];
         if ($append !== null) {
             $parameters['Append'] = $append;
         }
@@ -1085,7 +1089,7 @@ class Ami
     public function log($message, $level = self::LOG_INFO)
     {
         if ($level <= $this->logLevel) {
-            error_log(date('r') . ' - ' . $message);
+            error_log(date('r').' - '.$message);
         }
     }//end log()
 
