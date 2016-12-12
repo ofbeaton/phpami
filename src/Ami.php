@@ -166,7 +166,13 @@ class Ami
     {
         $req = 'Action: '.$action."\r\n";
         foreach ($parameters as $var => $val) {
-            $req .= $var.': '.$val."\r\n";
+            if (is_array($val) === true) { // only supported by Asterisk > 1.4
+                foreach ($val as $k => $v) {
+                    $req .= $var.': '.$k.'='.$v."\r\n";
+                }
+            } else {
+                $req .= $var.': '.$val."\r\n";
+            }
         }
 
         $req .= "\r\n";

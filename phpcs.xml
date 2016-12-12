@@ -6,5 +6,7 @@
     
     <arg name="extensions" value="php"/>  
         
-    <rule ref="phpcs/PHPAMI"/>           
+    <rule ref="phpcs/PHPAMI"/>
+    
+    <config name="php_version" value="50400"/>           
 </ruleset>
