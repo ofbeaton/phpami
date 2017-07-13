@@ -160,10 +160,13 @@ class Ami
     * @param string $action     To send.
     * @param array  $parameters To attach.
     *
-    * @return array of parameters
+    * @return array of parameters, empty if invalid socket resource
     */
     public function sendRequest($action, array $parameters = [])
     {
+    		if (!is_resource($this->socket))
+    			return [];
+    
         $req = 'Action: '.$action."\r\n";
         foreach ($parameters as $var => $val) {
             if (is_array($val) === true) { // only supported by Asterisk > 1.4
@@ -191,10 +194,13 @@ class Ami
     *
     * @param boolean $allowTimeout If the socket times out, return an empty array.
     *
-    * @return array of parameters, empty on timeout
+    * @return array of parameters, empty on timeout or invalid socket resource
     */
     public function waitResponse($allowTimeout = false)
     {
+    		if (!is_resource($this->socket))
+    			return [];
+    			
         // make sure we haven't already timed out
         $info = stream_get_meta_data($this->socket);
         if (feof($this->socket) === true || $info['timed_out'] === true) {
