@@ -379,7 +379,9 @@ class Ami
             $this->logoff();
         }
 
-        fclose($this->socket);
+				if (is_recource($this->socket)) {
+        	fclose($this->socket);
+        }
     }//end disconnect()
 
 
