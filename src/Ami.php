@@ -163,9 +163,10 @@ class Ami
     * @return array of parameters, empty if invalid socket resource
     */
     public function sendRequest($action, array $parameters = [])
-    {
-    		if (!is_resource($this->socket))
+    {    
+				if (!is_resource($this->socket)) {
     			return [];
+    		}
     
         $req = 'Action: '.$action."\r\n";
         foreach ($parameters as $var => $val) {
@@ -198,8 +199,9 @@ class Ami
     */
     public function waitResponse($allowTimeout = false)
     {
-    		if (!is_resource($this->socket))
+     		if (!is_resource($this->socket)) {
     			return [];
+    		}
     			
         // make sure we haven't already timed out
         $info = stream_get_meta_data($this->socket);
@@ -379,7 +381,7 @@ class Ami
             $this->logoff();
         }
 
-				if (is_recource($this->socket)) {
+				if (is_resource($this->socket)) {
         	fclose($this->socket);
         }
     }//end disconnect()
