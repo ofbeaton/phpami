@@ -5,7 +5,17 @@ This is a fork and update of the AMI portion of the now defunc [PHPAGI](http://p
 
 We have kept the simplicity of a single class with command methods, adding a packagist entry and namespaces. This is a breaking change as class and method names have changed to follow modern standards, however they are a 1:1 mapping so updating your code should be straight forward.
 
+## Alternatives
+
 If you are dealing with only Asterisk v13+ servers, consider using [PAMI](http://marcelog.github.io/PAMI/) instead, which uses modern design paterns with observer-listener pattern. It no longer supports legacy Asterisk versions like v1.4 however. It may also see less development than the [NAMI](http://marcelog.github.io/Nami/) library for NodeJS.    
+
+## Updates
+
+The project is considered in a usable state and feature complete.
+
+This project is used in corporate applications. As such, the authors are unlikely to update it on a regular basis, but instead when the corporate applications that use it run into problems. You should expect updates in the 5-10yr range. 
+
+Issues and PRs will be monitored, and we will continue to work with the community to provide updates as they are contributed.
 
 ## Installing via Composer
 
