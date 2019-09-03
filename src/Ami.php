@@ -93,6 +93,11 @@ class Ami
     */
     public $port;
 
+    /**
+     * @var int Used in waitResponse function to prevent looping when true
+     */
+    private $allowTimeout;
+
    /**
     * Event Handlers
     *
@@ -186,6 +191,17 @@ class Ami
         return $response;
     }//end sendRequest()
 
+    /**
+     * Set global allowTimeout flag
+     * it will prevent looping waitResponse function
+     *
+     * @param boolean $value
+     * @return void
+     */
+    public function allowTimeout($value = true)
+    {
+        $this->allowTimeout = boolval($value);
+    }//end allowTimeout()
 
    /**
     * Wait for a response
@@ -199,10 +215,12 @@ class Ami
     */
     public function waitResponse($allowTimeout = false)
     {
-     		if (!is_resource($this->socket)) {
-    			return [];
-    		}
-    			
+        if (!is_resource($this->socket)) {
+            return [];
+        }
+
+        $allowTimeout = $this->allowTimeout ?: $allowTimeout;
+
         // make sure we haven't already timed out
         $info = stream_get_meta_data($this->socket);
         if (feof($this->socket) === true || $info['timed_out'] === true) {
@@ -381,8 +399,8 @@ class Ami
             $this->logoff();
         }
 
-				if (is_resource($this->socket)) {
-        	fclose($this->socket);
+        if (is_resource($this->socket)) {
+            fclose($this->socket);
         }
     }//end disconnect()
 
