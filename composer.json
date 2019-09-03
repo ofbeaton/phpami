@@ -11,7 +11,7 @@
     "pagi"
   ],
   "homepage": "https://github.com/ofbeaton/phpami",
-  "license": "LGPL 2.1",
+  "license": "LGPL-2.1-only",
   "authors": [
     {
       "name": "Finlay Beaton",
