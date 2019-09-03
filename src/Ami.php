@@ -215,10 +215,10 @@ class Ami
     */
     public function waitResponse($allowTimeout = false)
     {
-     		if (!is_resource($this->socket)) {
-    			return [];
-    		}
-    			
+        if (!is_resource($this->socket)) {
+            return [];
+        }
+
         $allowTimeout = $this->allowTimeout ?: $allowTimeout;
 
         // make sure we haven't already timed out
