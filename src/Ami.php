@@ -399,8 +399,8 @@ class Ami
             $this->logoff();
         }
 
-				if (is_resource($this->socket)) {
-        	fclose($this->socket);
+        if (is_resource($this->socket)) {
+            fclose($this->socket);
         }
     }//end disconnect()
 
