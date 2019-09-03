@@ -41,6 +41,10 @@ After installing, you can now use it in your code:
       throw new \RuntimeException('Could not connect to Asterisk Management Interface.');
    }
    
+   // // if you have a looping of command function
+   // // set allowTimeout flag to true
+   // $ami->allowTimeout();
+
    // $result contains the output from the command
    $result = $ami->command('core show channels');
    
