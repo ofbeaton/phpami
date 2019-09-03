@@ -1,34 +1,40 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "2ffcacab7879382cb78548af2a972081",
-    "content-hash": "059a92d3fb3b4a56a5f29c848c48a1f4",
+    "content-hash": "4c85890cfd4b93685a90d1784f890253",
     "packages": [],
     "packages-dev": [
         {
-            "name": "ofbeaton/granite",
-            "version": "1.0.0",
+            "name": "ofbeaton/granite-php",
+            "version": "6.9.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ofbeaton/granite.git",
-                "reference": "7ada3eee640dd2f88418bb62eda4daaa0d713eb3"
+                "url": "https://github.com/ofbeaton/granite-php.git",
+                "reference": "1767dfb3dd7f9a0026c007cd68ad7ffeb51d4b82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ofbeaton/granite/zipball/7ada3eee640dd2f88418bb62eda4daaa0d713eb3",
-                "reference": "7ada3eee640dd2f88418bb62eda4daaa0d713eb3",
+                "url": "https://api.github.com/repos/ofbeaton/granite-php/zipball/1767dfb3dd7f9a0026c007cd68ad7ffeb51d4b82",
+                "reference": "1767dfb3dd7f9a0026c007cd68ad7ffeb51d4b82",
                 "shasum": ""
             },
-            "require": {
-                "squizlabs/php_codesniffer": "^2.0"
+            "require-dev": {
+                "jakub-onderka/php-console-highlighter": "^0.4.0",
+                "jakub-onderka/php-parallel-lint": "^1.0",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "suggest": {
+                "jakub-onderka/php-console-highlighter": "Highlight syntax for php-parallel-lint",
+                "jakub-onderka/php-parallel-lint": "speed up `php -l` check",
+                "squizlabs/php_codesniffer": "check and fix granite code style"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -42,78 +48,52 @@
                 },
                 {
                     "name": "Granite Community",
-                    "homepage": "https://github.com/ofbeaton/granite/graphs/contributors"
+                    "homepage": "https://github.com/ofbeaton/granite-php/graphs/contributors"
                 }
             ],
-            "description": "Strict PHP Coding Style enforced by CodeSniffer 2.3+",
-            "homepage": "https://github.com/ofbeaton/granite",
+            "description": "Opinionated PHP Coding Style enforcement for PHP",
+            "homepage": "https://github.com/ofbeaton/granite-php",
             "keywords": [
                 "Code style",
                 "Coding Style",
                 "PHP_CodeSniffer",
-                "code sniffer"
+                "code sniffer",
+                "lint"
             ],
-            "time": "2016-08-10 15:09:37"
+            "time": "2019-03-21T21:17:59+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.7.1",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "9b324f3a1132459a7274a0ace2e1b766ba80930f"
+                "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9b324f3a1132459a7274a0ace2e1b766ba80930f",
-                "reference": "9b324f3a1132459a7274a0ace2e1b766ba80930f",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
+                "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
                 "shasum": ""
             },
             "require": {
                 "ext-simplexml": "*",
                 "ext-tokenizer": "*",
                 "ext-xmlwriter": "*",
-                "php": ">=5.1.2"
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
             },
             "bin": [
-                "scripts/phpcs",
-                "scripts/phpcbf"
+                "bin/phpcs",
+                "bin/phpcbf"
             ],
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev"
+                    "dev-master": "3.x-dev"
                 }
-            },
-            "autoload": {
-                "classmap": [
-                    "CodeSniffer.php",
-                    "CodeSniffer/CLI.php",
-                    "CodeSniffer/Exception.php",
-                    "CodeSniffer/File.php",
-                    "CodeSniffer/Fixer.php",
-                    "CodeSniffer/Report.php",
-                    "CodeSniffer/Reporting.php",
-                    "CodeSniffer/Sniff.php",
-                    "CodeSniffer/Tokens.php",
-                    "CodeSniffer/Reports/",
-                    "CodeSniffer/Tokenizers/",
-                    "CodeSniffer/DocGenerators/",
-                    "CodeSniffer/Standards/AbstractPatternSniff.php",
-                    "CodeSniffer/Standards/AbstractScopeSniff.php",
-                    "CodeSniffer/Standards/AbstractVariableSniff.php",
-                    "CodeSniffer/Standards/IncorrectPatternException.php",
-                    "CodeSniffer/Standards/Generic/Sniffs/",
-                    "CodeSniffer/Standards/MySource/Sniffs/",
-                    "CodeSniffer/Standards/PEAR/Sniffs/",
-                    "CodeSniffer/Standards/PSR1/Sniffs/",
-                    "CodeSniffer/Standards/PSR2/Sniffs/",
-                    "CodeSniffer/Standards/Squiz/Sniffs/",
-                    "CodeSniffer/Standards/Zend/Sniffs/"
-                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -126,12 +106,12 @@
                 }
             ],
             "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
-            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
             "keywords": [
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-11-30 04:02:31"
+            "time": "2019-04-10T23:49:02+00:00"
         }
     ],
     "aliases": [],
