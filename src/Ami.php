@@ -264,8 +264,12 @@ class Ami
           // process response
             switch ($type) {
                 case '':
-                     // timeout occured
-                    $timeout = $allowTimeout;
+                    /*
+                    Timeout or connection failure occurred. If not timed_out assume
+                    connection failure and set timeout=true to exit while loop.
+                    */
+                    $info = stream_get_meta_data($this->socket);
+                    $timeout = ($info['timed_out'] === true) ? $allowTimeout : true;
                     break;
 
                 case 'event':
