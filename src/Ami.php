@@ -259,6 +259,30 @@ class Ami
                 }//end if
 
                 $buffer = trim(fgets($this->socket, 4096));
+
+                //asterisk 18 data format. Each Output is placed in an array. Grab all outputs and put them into one array with 'data' key so that that format is the same as Asterisk 13.
+
+                //(
+                //    [Response] => Success
+                //    [Message] => Command output follows
+                //    [Output] => PJSIP/SBC-000c984a!default!8006319010!33!Up!Set!__TRANSFER_CONTEXT=internals!Anonymous!!!3!932!!1686577740.11883886
+                //)
+
+                if(substr($buffer, 0, 6) == 'Output'){
+                    
+                    $parameters['data'] ='';
+                    $value = '';
+
+                    while($buffer != ''){
+                        $value .= substr($buffer, 8);  
+                        $value .="\r\n"; //later the string will be split into an array by "\n" in Functions.php
+                        $buffer = trim(fgets($this->socket, 4096));
+                    }
+
+                    $parameters['data'] = $value;
+
+                }
+
             }//end while
 
           // process response
